@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@theme {
+  --color-brand-green: #0f3d2e;
+  --color-brand-gold: #d4af37;
+  --color-brand-beige: #f9f6f0;
+  --color-brand-cream: #fffcf7;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-beige);
+    color: var(--color-brand-green);
+    font-family: var(--font-lato);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-brand-green);
+    color: var(--color-brand-gold);
+    @apply px-8 py-3 rounded-sm font-medium transition-all duration-300 active:scale-95;
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  
+  .btn-secondary {
+    border: 1px solid var(--color-brand-green);
+    color: var(--color-brand-green);
+    @apply px-8 py-3 rounded-sm font-medium transition-all duration-300 active:scale-95;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-brand-green);
+    color: white;
+  }
+  
+  .btn-gold {
+    background-color: var(--color-brand-gold);
+    color: var(--color-brand-green);
+    @apply px-8 py-3 rounded-sm font-medium transition-all duration-300 active:scale-95;
+  }
+  .btn-gold:hover {
+    opacity: 0.9;
+  }
+  
+  .card-premium {
+    background-color: white;
+    @apply shadow-sm transition-all duration-300 rounded-sm overflow-hidden;
+  }
+  .card-premium:hover {
+    @apply shadow-md;
+  }
+  
+  .section-title {
+    color: var(--color-brand-green);
+    font-family: var(--font-playfair);
+    @apply text-3xl md:text-4xl mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    color: var(--color-brand-gold);
+    @apply font-medium uppercase tracking-widest text-sm text-center mb-2 block;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-brand-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-brand-green);
+  opacity: 0.3;
+  @apply rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+}
+
+/* Transitions */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
