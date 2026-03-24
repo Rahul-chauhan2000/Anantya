@@ -117,7 +117,7 @@ const productsData = [
   },
   {
     "id": 9,
-    "name": "Skin Care + Oil Combo",
+    "name": "Skin Care & Oil Combo",
     "price": 2450,
     "category": "Combo / Gift Packs",
     "image": Product9,
