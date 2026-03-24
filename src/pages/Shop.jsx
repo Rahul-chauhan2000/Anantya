@@ -13,7 +13,7 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [priceRange, setPriceRange] = useState(2000);
+  const [priceRange, setPriceRange] = useState(3000);
   const [sortBy, setSortBy] = useState('default');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -177,7 +177,7 @@ const Shop = () => {
               <input 
                 type="range" 
                 min="0" 
-                max="2000" 
+                max="3000" 
                 step="50"
                 value={priceRange}
                 onChange={(e) => setPriceRange(parseInt(e.target.value))}
@@ -185,7 +185,7 @@ const Shop = () => {
               />
               <div className="flex justify-between text-[9px] text-brand-green/30 mt-3 font-bold uppercase tracking-widest">
                 <span>₹0</span>
-                <span>₹2000</span>
+                <span>₹3000</span>
               </div>
             </motion.div>
           </aside>
@@ -240,7 +240,8 @@ const Shop = () => {
                     onClick={() => {
                       setSearchTerm('');
                       setSelectedCategory('All');
-                      setPriceRange(2000);
+                      setSearchParams({});
+                      setPriceRange(3000);
                     }}
                     className="btn-primary text-xs tracking-widest"
                   >
@@ -306,7 +307,7 @@ const Shop = () => {
                   <input 
                     type="range" 
                     min="0" 
-                    max="2000" 
+                    max="3000" 
                     step="50"
                     value={priceRange}
                     onChange={(e) => setPriceRange(parseInt(e.target.value))}
@@ -318,7 +319,8 @@ const Shop = () => {
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory('All');
-                    setPriceRange(2000);
+                    setSearchParams({});
+                    setPriceRange(3000);
                     setIsSidebarOpen(false);
                   }}
                   className="w-full btn-secondary mt-8 text-xs tracking-widest"
