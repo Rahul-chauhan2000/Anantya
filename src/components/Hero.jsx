@@ -4,9 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Import local assets
-import Banner1 from '../assets/Banner1.jpeg';
-import Banner2 from '../assets/Banner2.jpeg';
-import Banner3 from '../assets/Banner3.jpeg';
+// import Banner1 from '../assets/Banner1.png';
+// import Banner2 from '../assets/Banner2.png';
+// import Banner3 from '../assets/Banner3.png';
+import Banner1 from '../assets/Banner4.png';
+import Banner2 from '../assets/Banner5.png';
+import Banner3 from '../assets/Banner6.png';
 
 const banners = [
   {
@@ -43,7 +46,7 @@ const Hero = () => {
   const prevSlide = () => setCurrent(current === 0 ? banners.length - 1 : current - 1);
 
   return (
-    <section className="relative h-[90vh] flex items-center overflow-hidden bg-brand-green">
+    <section className="relative h-screen flex items-center overflow-hidden bg-brand-green">
       {/* Background Slider */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -59,7 +62,7 @@ const Hero = () => {
             alt="Ayurvedic Natural Care"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-green/70 via-brand-green/40 to-transparent backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-brand-green/70 via-brand-green/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -137,7 +140,7 @@ const Hero = () => {
         className="absolute bottom-10 left-10 z-10 hidden lg:flex flex-col items-center"
       >
         <span className="text-[9px] text-white/40 uppercase tracking-[0.3em] mb-4 font-bold [writing-mode:vertical-lr]">Scroll</span>
-        <div className="w-px h-16 bg-gradient-to-b from-brand-gold to-transparent"></div>
+        <div className="w-px h-16 bg-linear-to-b from-brand-gold to-transparent"></div>
       </motion.div>
     </section>
   );

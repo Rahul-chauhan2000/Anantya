@@ -1,11 +1,15 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { ProductCardSkeleton } from '../components/Skeletons';
-import productsData from '../data/products.json';
+import productsData from '../data/products.js';
 import { Search, Filter, ChevronDown, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Shop = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('category');
+
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -14,12 +18,28 @@ const Shop = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (categoryFromUrl) {
+      setSelectedCategory(categoryFromUrl);
+    } else {
+      setSelectedCategory('All');
+    }
+  }, [categoryFromUrl]);
 
-  const categories = ['All', ...new Set(productsData.map(p => p.category))];
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, [selectedCategory]);
+
+  const categories = [
+    'All',
+    "Hair Care",
+    "Skin Care",
+    "Bath & Body Care",
+    "Fragrance / Perfume",
+    "Powder / Raw Herbal Products",
+    "Combo / Gift Packs"
+  ];
 
   const filteredProducts = useMemo(() => {
     return productsData
@@ -133,7 +153,10 @@ const Shop = () => {
                 {categories.map((cat) => (
                   <li key={cat}>
                     <button 
-                      onClick={() => setSelectedCategory(cat)}
+                      onClick={() => {
+                        setSelectedCategory(cat);
+                        setSearchParams(cat === 'All' ? {} : { category: cat });
+                      }}
                       className={`text-[10px] tracking-widest uppercase transition-all duration-300 flex items-center group font-bold ${
                         selectedCategory === cat ? 'text-brand-gold' : 'text-brand-green/40 hover:text-brand-gold'
                       }`}
@@ -239,14 +262,14 @@ const Shop = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsSidebarOpen(false)}
-              className="fixed inset-0 bg-brand-green/40 backdrop-blur-sm z-[60]"
+              className="fixed inset-0 bg-brand-green/40 backdrop-blur-sm z-60"
             />
             <motion.aside 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 bg-brand-cream z-[70] p-8 shadow-2xl border-l border-brand-gold/10"
+              className="fixed top-0 right-0 h-full w-80 bg-brand-cream z-70 p-8 shadow-2xl border-l border-brand-gold/10"
             >
               <div className="flex justify-between items-center mb-12">
                 <h3 className="text-2xl font-playfair text-brand-green">Filters</h3>
@@ -264,6 +287,7 @@ const Shop = () => {
                         <button 
                           onClick={() => {
                             setSelectedCategory(cat);
+                            setSearchParams(cat === 'All' ? {} : { category: cat });
                             setIsSidebarOpen(false);
                           }}
                           className={`text-xs tracking-[0.2em] uppercase transition-all font-bold ${

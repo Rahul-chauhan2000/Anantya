@@ -36,7 +36,7 @@ const Login = () => {
         <div className="hidden lg:flex flex-col justify-between bg-brand-green p-16 text-brand-beige relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <img 
-              src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?q=80&w=1000&auto=format&fit=crop" 
+              src={LoginImage} 
               alt="Ayurveda Heritage"
               className="w-full h-full object-cover scale-110"
             />

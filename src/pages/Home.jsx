@@ -1,9 +1,17 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
-import productsData from '../data/products.json';
+import productsData from '../data/products.js';
 import { motion } from 'framer-motion';
 import { Leaf, Droplets, ShieldCheck, Sparkles, Check } from 'lucide-react';
+import HairFallControl from '../assets/Image/Hair Fall Control.png';
+import AcneReduction from '../assets/Image/Acne Reduction.png';
+import GlowingSkin from '../assets/Image/Glowing Skin.png';
+import PsoriasisCare from '../assets/Image/Psoriasis Care.png';
+import Neem from '../assets/Image/Neem.png';
+import AloeVera from '../assets/Image/Aloe Vera.png';
+import Tulsi from '../assets/Image/Tulsi.png';
+import Turmeric from '../assets/Image/Turmeric.png';
 
 const Home = () => {
   const featuredProducts = productsData.filter(p => p.featured);
@@ -16,17 +24,17 @@ const Home = () => {
   ];
 
   const benefits = [
-    { title: "Hair Fall Control", image: "https://images.unsplash.com/photo-1527799822344-429dfa62285a?q=80&w=1000&auto=format&fit=crop" },
-    { title: "Acne Reduction", image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1000&auto=format&fit=crop" },
-    { title: "Glowing Skin", image: "https://images.unsplash.com/photo-1512290903422-d7a8d11a2234?q=80&w=1000&auto=format&fit=crop" },
-    { title: "Psoriasis Care", image: "https://images.unsplash.com/photo-1584305670710-e74639a5c613?q=80&w=1000&auto=format&fit=crop" }
+    { title: "Hair Fall Control", image: HairFallControl },
+    { title: "Acne Reduction", image: AcneReduction },
+    { title: "Glowing Skin", image: GlowingSkin },
+    { title: "Psoriasis Care", image: PsoriasisCare }
   ];
 
   const ingredients = [
-    { name: "Neem", image: "https://images.unsplash.com/photo-1599309138491-03975d419363?q=80&w=400&auto=format&fit=crop" },
-    { name: "Aloe Vera", image: "https://images.unsplash.com/photo-1520342899991-f5c3d5c6c1a6?q=80&w=400&auto=format&fit=crop" },
-    { name: "Tulsi", image: "https://images.unsplash.com/photo-1604424331992-34a2a4c8a4c?q=80&w=400&auto=format&fit=crop" },
-    { name: "Turmeric", image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?q=80&w=400&auto=format&fit=crop" }
+    { name: "Neem", image: Neem },
+    { name: "Aloe Vera", image: AloeVera },
+    { name: "Tulsi", image: Tulsi },
+    { name: "Turmeric", image: Turmeric }
   ];
 
   return (
@@ -77,20 +85,20 @@ const Home = () => {
             <h2 className="section-title">Experience the Transformation</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div 
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="relative h-96 group overflow-hidden rounded-sm"
+                className="relative aspect-[4/3] group overflow-hidden rounded-sm shadow-lg"
               >
                 <img 
                   src={benefit.image} 
                   alt={benefit.title} 
-                  className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-green/80 to-transparent flex items-end p-8">
-                  <h3 className="text-white font-playfair text-2xl group-hover:text-brand-gold transition-colors">{benefit.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 to-transparent flex items-end p-6">
+                  <h3 className="text-white font-playfair text-xl group-hover:text-brand-gold transition-colors">{benefit.title}</h3>
                 </div>
               </motion.div>
             ))}
