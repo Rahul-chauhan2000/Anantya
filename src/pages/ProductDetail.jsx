@@ -96,13 +96,13 @@ const ProductDetail = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="space-y-4"
           >
-            <div className="aspect-[4/5] rounded-sm overflow-hidden bg-white shadow-2xl group cursor-zoom-in relative">
+            <div className="aspect-4/5 rounded-sm overflow-hidden bg-white shadow-2xl group cursor-zoom-in relative flex items-center justify-center">
               <motion.img 
-                whileHover={{ scale: 1.15 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8 }}
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-4"
               />
               <div className="absolute inset-0 bg-brand-green/5 pointer-events-none"></div>
             </div>
@@ -249,7 +249,7 @@ const ProductDetail = () => {
           ))}
         </div>
 
-        <div className="py-16 min-h-[300px]">
+        <div className="py-16 min-h-75">
           <AnimatePresence mode="wait">
             {activeTab === 'description' && (
               <motion.div 
@@ -300,7 +300,7 @@ const ProductDetail = () => {
                       whileHover={{ x: 10 }}
                       className="flex items-center space-x-6 bg-white p-6 rounded-sm border-l-4 border-brand-gold shadow-sm"
                     >
-                      <div className="w-3 h-3 rounded-full bg-brand-gold flex-shrink-0 shadow-lg"></div>
+                      <div className="w-3 h-3 rounded-full bg-brand-gold shrink-0 shadow-lg"></div>
                       <span className="text-brand-green/80 font-medium text-lg italic leading-relaxed">"{benefit}"</span>
                     </motion.li>
                   ))}

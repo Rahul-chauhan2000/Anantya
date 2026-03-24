@@ -22,7 +22,7 @@ const Cart = () => {
           <p className="text-brand-green/60 max-w-sm mx-auto font-light leading-relaxed">
             Looks like you haven't added anything to your cart yet. Discover our pure Ayurvedic treasures.
           </p>
-          <Link to="/shop" className="btn-primary inline-flex items-center space-x-2">
+        <Link to="/shop" className="btn-primary inline-flex items-center space-x-2">
             <span>Explore Products</span>
             <ArrowRight size={18} />
           </Link>
@@ -54,8 +54,8 @@ const Cart = () => {
                     className="flex flex-col sm:flex-row items-center gap-6 p-6 bg-white rounded-sm shadow-sm border border-brand-gold/5"
                   >
                     {/* Image */}
-                    <Link to={`/product/${item.id}`} className="w-32 h-32 flex-shrink-0 rounded-sm overflow-hidden bg-brand-beige/20">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    <Link to={`/product/${item.id}`} className="w-32 h-32 shrink-0 rounded-sm overflow-hidden bg-brand-beige/20 flex items-center justify-center p-2">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                     </Link>
 
                     {/* Details */}
@@ -83,7 +83,7 @@ const Cart = () => {
                     </div>
 
                     {/* Subtotal */}
-                    <div className="text-right sm:min-w-[100px]">
+                    <div className="text-right sm:min-w-25">
                       <p className="text-brand-green font-bold text-lg">₹{item.price * item.quantity}</p>
                     </div>
 

@@ -173,7 +173,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex gap-4 pt-8">
                       <button type="button" onClick={() => setStep(1)} className="flex-1 btn-secondary py-4">Back</button>
-                      <button type="submit" className="flex-[2] btn-primary py-4 text-lg shadow-xl shadow-brand-green/10">Place Order ₹{cartTotal}</button>
+                      <button type="submit" className="flex-2 btn-primary py-4 text-lg shadow-xl shadow-brand-green/10">Place Order ₹{cartTotal}</button>
                     </div>
                   </form>
                 </motion.div>
@@ -189,8 +189,8 @@ const Checkout = () => {
               <div className="max-h-60 overflow-y-auto mb-8 pr-4 space-y-4">
                 {cart.map(item => (
                   <div key={item.id} className="flex gap-4">
-                    <div className="w-16 h-16 rounded-sm overflow-hidden bg-brand-beige/20 shrink-0">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    <div className="w-16 h-16 rounded-sm overflow-hidden bg-brand-beige/20 shrink-0 flex items-center justify-center p-2">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="text-sm font-medium text-brand-green truncate">{item.name}</h4>

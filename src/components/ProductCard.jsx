@@ -54,12 +54,12 @@ const ProductCard = ({ product }) => {
       className="group card-premium relative flex flex-col h-full bg-white transition-shadow duration-500 hover:shadow-2xl"
     >
       {/* Product Image */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-brand-beige/20 flex items-center justify-center">
-        <Link to={`/product/${product.id}`} className="w-full h-full">
+      <div className="relative aspect-4/5 overflow-hidden bg-brand-beige/20 flex items-center justify-center p-6">
+        <Link to={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
           <img 
             src={product.image} 
             alt={product.name}
-            className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-110"
+            className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
           />
         </Link>
         
@@ -96,7 +96,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Product Info */}
-      <div className="p-6 flex flex-col flex-grow bg-white min-h-[160px]">
+      <div className="p-6 flex flex-col grow bg-white min-h-40">
         <div className="flex justify-between items-start mb-3">
           <p className="text-[9px] uppercase tracking-widest font-bold text-brand-gold/60">{product.category}</p>
           <div className="flex items-center text-brand-gold">
@@ -106,7 +106,7 @@ const ProductCard = ({ product }) => {
         </div>
         
         <Link to={`/product/${product.id}`}>
-          <h3 className="text-brand-green font-playfair text-xl leading-tight group-hover:text-brand-gold transition-colors mb-4 min-h-[3rem]">
+          <h3 className="text-brand-green font-playfair text-xl leading-tight group-hover:text-brand-gold transition-colors mb-4 min-h-12">
             {product.name}
           </h3>
         </Link>
