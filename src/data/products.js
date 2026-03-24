@@ -9,6 +9,7 @@ import Product8 from '../assets/Product 8.png';
 import Product9 from '../assets/Product 9.png';
 import Product10 from '../assets/Product 10.png';
 import Product11 from '../assets/Product 11.png';
+import Product12 from '../assets/Product12.png';
 
 const productsData = [
   {
@@ -152,6 +153,19 @@ const productsData = [
     "benefits": ["Long-lasting fragrance", "100% Natural", "Perfect for gifting"],
     "rating": 4.8,
     "reviews": 28,
+    "featured": true
+  },
+  {
+    "id": 12,
+    "name": "Psoriasis Ayurvedic Oil & Powder",
+    "price": 1450,
+    "category": "Skin Care",
+    "image": Product12,
+    "description": "A specialized Ayurvedic formulation for managing psoriasis and dry skin conditions. Deeply hydrates and reduces inflammation naturally.",
+    "ingredients": ["Wrightia Tinctoria", "Coconut Oil", "Neem", "Turmeric"],
+    "benefits": ["Reduces scaling and itching", "Deeply moisturizes", "Soothing effect"],
+    "rating": 4.9,
+    "reviews": 64,
     "featured": true
   }
 ];
