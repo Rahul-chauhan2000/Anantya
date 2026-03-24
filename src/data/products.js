@@ -6,6 +6,9 @@ import Product5 from '../assets/Product 5.png';
 import Product6 from '../assets/Product 6.png';
 import Product7 from '../assets/Product 7.png';
 import Product8 from '../assets/Product 8.png';
+import Product9 from '../assets/Product 9.png';
+import Product10 from '../assets/Product 10.png';
+import Product11 from '../assets/Product 11.png';
 
 const productsData = [
   {
@@ -110,6 +113,45 @@ const productsData = [
     "benefits": ["Natural exfoliation", "Removes tan", "Deeply cleanses"],
     "rating": 4.7,
     "reviews": 112,
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "Skin Care + Oil Combo",
+    "price": 2450,
+    "category": "Combo / Gift Packs",
+    "image": Product9,
+    "description": "A complete skincare set featuring our best-selling Kumkumadi Tailam, Face Wash, and Revitalizing Cream. Perfect for a natural, healthy glow.",
+    "ingredients": ["Saffron", "Neem", "Sandalwood", "Rose"],
+    "benefits": ["Complete skincare routine", "Deep hydration", "Radiant complexion"],
+    "rating": 5.0,
+    "reviews": 45,
+    "featured": true
+  },
+  {
+    "id": 10,
+    "name": "Hair & Skin Care Combo",
+    "price": 1850,
+    "category": "Combo / Gift Packs",
+    "image": Product10,
+    "description": "Everything your hair needs in one pack. Includes Shampoo, Ayurvedic Oil, and Serum to combat hair fall and promote growth.",
+    "ingredients": ["Brahmi", "Amla", "Hibiscus", "Coconut Oil"],
+    "benefits": ["Strengthens hair roots", "Prevents hair fall", "Adds shine"],
+    "rating": 4.9,
+    "reviews": 32,
+    "featured": true
+  },
+  {
+    "id": 11,
+    "name": "Bath & Herbal Care Combo",
+    "price": 2100,
+    "category": "Combo / Gift Packs",
+    "image": Product11,
+    "description": "Experience our range of natural fragrances. Includes Rose Sandal and Jasmine Bliss along with a limited edition mystery scent.",
+    "ingredients": ["Rose Oil", "Sandalwood Oil", "Jasmine Extracts"],
+    "benefits": ["Long-lasting fragrance", "100% Natural", "Perfect for gifting"],
+    "rating": 4.8,
+    "reviews": 28,
     "featured": true
   }
 ];
